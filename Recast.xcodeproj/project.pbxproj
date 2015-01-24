@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F5BF6F51A73C93700BA1D2D /* AudioFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5BF6F41A73C93700BA1D2D /* AudioFinder.m */; };
 		8FE4C6951A5ED0E2008301C5 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE4C6941A5ED0E2008301C5 /* ComposeViewController.m */; };
 		8FE88A201A5BF7710065AE14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE88A1F1A5BF7710065AE14 /* main.m */; };
 		8FE88A231A5BF7710065AE14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE88A221A5BF7710065AE14 /* AppDelegate.m */; };
@@ -52,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F5BF6F31A73C93700BA1D2D /* AudioFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFinder.h; sourceTree = "<group>"; };
+		8F5BF6F41A73C93700BA1D2D /* AudioFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFinder.m; sourceTree = "<group>"; };
 		8FE4C6911A5EB3B1008301C5 /* Recast Sheet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Recast Sheet.entitlements"; sourceTree = "<group>"; };
 		8FE4C6921A5EB3C1008301C5 /* Recast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Recast.entitlements; sourceTree = "<group>"; };
 		8FE4C6931A5ED0E2008301C5 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				8FE88A4C1A5C1AE60065AE14 /* ShareViewController.m */,
 				8FE4C6931A5ED0E2008301C5 /* ComposeViewController.h */,
 				8FE4C6941A5ED0E2008301C5 /* ComposeViewController.m */,
+				8F5BF6F31A73C93700BA1D2D /* AudioFinder.h */,
+				8F5BF6F41A73C93700BA1D2D /* AudioFinder.m */,
 				8FE88A4E1A5C1AE60065AE14 /* MainInterface.storyboard */,
 				8FE88A491A5C1AE60065AE14 /* Supporting Files */,
 			);
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5BF6F51A73C93700BA1D2D /* AudioFinder.m in Sources */,
 				8FE88A4D1A5C1AE60065AE14 /* ShareViewController.m in Sources */,
 				8FE4C6951A5ED0E2008301C5 /* ComposeViewController.m in Sources */,
 			);

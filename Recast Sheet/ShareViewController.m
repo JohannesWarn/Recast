@@ -6,12 +6,16 @@
 //  Copyright (c) 2015 Johannes Wärn. All rights reserved.
 //
 
+#import <MobileCoreServices/MobileCoreServices.h>
+
 #import "ShareViewController.h"
 #import "ComposeViewController.h"
 
 @interface ShareViewController () <ComposeViewControllerDelegate>
 
 @property (nonatomic) UINavigationController *navigationController;
+@property (nonatomic) ComposeViewController *composeController;
+@property (nonatomic) NSURL *siteURL;
 
 @end
 
@@ -20,6 +24,15 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self performSegueWithIdentifier:@"show" sender:self];
+    
+    NSExtensionItem *item = self.extensionContext.inputItems.firstObject;
+    NSItemProvider *itemProvider = item.attachments.firstObject;
+    if ([itemProvider hasItemConformingToTypeIdentifier:(NSString *)kUTTypeURL]) {
+        [itemProvider loadItemForTypeIdentifier:(NSString *)kUTTypeURL options:nil completionHandler:^(NSURL *url, NSError *error) {
+            self.siteURL = url;
+            [self.composeController setSiteURL:self.siteURL];
+        }];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -29,7 +42,11 @@
         self.navigationController = navigationController;
         if ([[navigationController.viewControllers firstObject] isKindOfClass:[ComposeViewController class]]) {
             ComposeViewController *composeViewController = (ComposeViewController *)[navigationController.viewControllers firstObject];
+            self.composeController = composeViewController;
             [composeViewController setDelegate:self];
+            if (composeViewController.siteURL == nil && self.siteURL != nil) {
+                [self.composeController setSiteURL:self.siteURL];
+            }
         }
     }
 }

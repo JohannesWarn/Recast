@@ -14,6 +14,9 @@
 
 @property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
 
+@property (nonatomic) NSURL *siteURL;
+@property (nonatomic) NSArray *audioLinks;
+
 @end
 
 @protocol ComposeViewControllerDelegate <NSObject>
