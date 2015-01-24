@@ -36,18 +36,21 @@
         NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:nil];
         NSArray *matches = [detector matchesInString:htmlString options:0 range:NSMakeRange(0, [htmlString length])];
         
-        NSMutableArray *audioLinks = [NSMutableArray array];
+        NSMutableArray *audioURLs = [NSMutableArray array];
         [matches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             NSURL *link = ((NSTextCheckingResult *)obj).URL;
             NSString *suffix = [[link.absoluteString componentsSeparatedByString:@"."] lastObject];
             suffix = [[suffix componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"?#"]] firstObject];
             if ([self.audioSuffixes containsObject:suffix]) {
-                [audioLinks addObject:link];
+                [audioURLs addObject:link];
             }
         }];
         
+        self.audioURLs = audioURLs;
+        self.audioURL = [audioURLs firstObject];;
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.delegate audioFinder:weakSelf foundAudioLinks:[NSArray arrayWithArray:audioLinks]];
+            [weakSelf.delegate audioFinderFinished:weakSelf];
         });
     });
 }

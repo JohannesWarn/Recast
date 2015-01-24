@@ -21,10 +21,8 @@
 
 @implementation ShareViewController
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [self performSegueWithIdentifier:@"show" sender:self];
-    
     NSExtensionItem *item = self.extensionContext.inputItems.firstObject;
     NSItemProvider *itemProvider = item.attachments.firstObject;
     if ([itemProvider hasItemConformingToTypeIdentifier:(NSString *)kUTTypeURL]) {
@@ -33,6 +31,11 @@
             [self.composeController setSiteURL:self.siteURL];
         }];
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self performSegueWithIdentifier:@"show" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -16,30 +16,18 @@
                         <sections>
                             <tableViewSection id="nFd-XQ-vRQ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="pvh-OS-4GW">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="WDB-Q0-gwX" style="IBUITableViewCellStyleDefault" id="pvh-OS-4GW">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pvh-OS-4GW" id="uvx-Bp-fMq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3z-ni-r7B">
-                                                    <rect key="frame" x="15" y="11" width="22" height="22"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="249" verticalCompressionResistancePriority="249" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pm-SC-YIy">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WDB-Q0-gwX">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="A3z-ni-r7B" firstAttribute="leading" secondItem="uvx-Bp-fMq" secondAttribute="leadingMargin" constant="7" id="0Ft-o1-Nga"/>
-                                                <constraint firstAttribute="centerY" secondItem="8Pm-SC-YIy" secondAttribute="centerY" id="DeG-8G-Lp7"/>
-                                                <constraint firstAttribute="centerY" secondItem="A3z-ni-r7B" secondAttribute="centerY" id="Lyr-oK-nkh"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Pm-SC-YIy" secondAttribute="trailing" id="lM4-tQ-VPE"/>
-                                                <constraint firstItem="8Pm-SC-YIy" firstAttribute="leading" secondItem="A3z-ni-r7B" secondAttribute="trailing" constant="9" id="rkJ-Rx-qWW"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="Rd0-gC-ajP" kind="show" id="06d-Xa-aEo"/>
@@ -70,13 +58,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iAs-38-ex5" id="gGd-EI-6Bk">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Via iTunes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H74-CE-zt7">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H74-CE-zt7">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="https://itunes.apple.com/se/podcast/fondpodden/id928476531?l=en&amp;mt=2&amp;i=327435266" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ywF-7S-2P7">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ywF-7S-2P7">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -110,6 +98,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="commentTextView" destination="8H4-oW-1AF" id="Hht-Aj-WzP"/>
+                        <outlet property="fileCell" destination="pvh-OS-4GW" id="2Is-BW-ug2"/>
+                        <outlet property="viaCell" destination="iAs-38-ex5" id="vxE-iv-EKY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvn-DR-Gdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,8 +191,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="7g0-NG-oB9"/>
                                                     <exclude reference="3c7-Vt-oUo"/>
+                                                    <exclude reference="7g0-NG-oB9"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

@@ -13,7 +13,11 @@
 @interface AudioFinder : NSObject
 
 @property (nonatomic, weak) id <AudioFinderDelegate> delegate;
+
 @property (nonatomic) NSURL *url;
+
+@property (nonatomic) NSArray *audioURLs;
+@property (nonatomic) NSURL *audioURL;
 
 - (instancetype)initWithURL:(NSURL *)url;
 - (void)findAudio;
@@ -23,6 +27,6 @@
 
 @protocol AudioFinderDelegate <NSObject>
 
-- (void)audioFinder:(AudioFinder *)audioFinder foundAudioLinks:(NSArray *)audioLinks;
+- (void)audioFinderFinished:(AudioFinder *)audioFinder;
 
 @end
